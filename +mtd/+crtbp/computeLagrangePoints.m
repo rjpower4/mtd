@@ -4,36 +4,43 @@ function lagrangePoints = computeLagrangePoints(massRatio, options)
     %
     %   The calculation is performed via a simple Newton-Raphson solver
     arguments
-        massRatio double {mtd.crtbp.mustBeAValidMassRatio}
+        massRatio double {mustBeVector, mtd.crtbp.mustBeAValidMassRatio}
         options.tol double {mustBeInRange(options.tol, 0, 1, "exclusive")} = 1e-12
         options.maxiter {mustBeInteger, mustBeGreaterThan(options.maxiter, 1)} = 15
     end
 
-    % Calculate guesses for collinear point x values
-    xCollinearGuess = szebehelyInitialGuesses(massRatio);
+    nMassRatios = length(massRatio);
+    lagrangePoints = zeros(5, 6, nMassRatios);
 
-    % Convert the x guesses to the gamma values referenced from:
-    %   1. Left of P2
-    %   2. Right of P2
-    %   3. Left of P1
-    g1Guess = 1 - massRatio - xCollinearGuess(1);
-    g2Guess = xCollinearGuess(2) - 1 + massRatio;
-    g3Guess = -massRatio - xCollinearGuess(3);
+    for k = 1:nMassRatios
+        % Pull out this mass ratio
+        mu = massRatio(k);
 
-    % Converge gammas
-    g1 = newtonRaphson(@hPoint1, massRatio, g1Guess, options.tol, options.maxiter);
-    g2 = newtonRaphson(@hPoint2, massRatio, g2Guess, options.tol, options.maxiter);
-    g3 = newtonRaphson(@hPoint3, massRatio, g3Guess, options.tol, options.maxiter);
+        % Calculate guesses for collinear point x values
+        xCollinearGuess = szebehelyInitialGuesses(mu);
 
-    % Convert to states
-    lagrangePoints = zeros(5, 6);
-    lagrangePoints(1, 1) = 1 - massRatio - g1;
-    lagrangePoints(2, 1) = 1 - massRatio + g2;
-    lagrangePoints(3, 1) = 0 - massRatio - g3;
-    lagrangePoints(4, 1) = 0.5 - massRatio;
-    lagrangePoints(4, 2) = sqrt(3) / 2;
-    lagrangePoints(5, 1) = lagrangePoints(4, 1);
-    lagrangePoints(5, 2) = -lagrangePoints(4, 2);
+        % Convert the x guesses to the gamma values referenced from:
+        %   1. Left of P2
+        %   2. Right of P2
+        %   3. Left of P1
+        g1Guess = 1 - mu - xCollinearGuess(1);
+        g2Guess = xCollinearGuess(2) - 1 + mu;
+        g3Guess = -mu - xCollinearGuess(3);
+
+        % Converge gammas
+        g1 = newtonRaphson(@hPoint1, mu, g1Guess, options.tol, options.maxiter);
+        g2 = newtonRaphson(@hPoint2, mu, g2Guess, options.tol, options.maxiter);
+        g3 = newtonRaphson(@hPoint3, mu, g3Guess, options.tol, options.maxiter);
+
+        % Convert to states
+        lagrangePoints(1, 1, k) = 1 - mu - g1;
+        lagrangePoints(2, 1, k) = 1 - mu + g2;
+        lagrangePoints(3, 1, k) = 0 - mu - g3;
+        lagrangePoints(4, 1, k) = 0.5 - mu;
+        lagrangePoints(4, 2, k) = sqrt(3) / 2;
+        lagrangePoints(5, 1, k) = lagrangePoints(4, 1);
+        lagrangePoints(5, 2, k) = -lagrangePoints(4, 2);
+    end
 end
 
 function x0 = szebehelyInitialGuesses(mu)
