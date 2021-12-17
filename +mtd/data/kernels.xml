@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasets>
+	<dataset>
+		<name>de430</name>
+		<filename>de430.bsp</filename>
+		<url>https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de430.bsp</url>
+		<description>default planetary ephemeris kernel</description>
+		<default>true</default>
+		<type>spice_spk</type>
+	</dataset>
+	<dataset>
+		<name>naif0012</name>
+		<filename>naif0012.tls</filename>
+		<url>https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls</url>
+		<description>default leapsecond kernel</description>
+		<default>true</default>
+		<type>spice_lsk</type>
+	</dataset>
+</datasets>

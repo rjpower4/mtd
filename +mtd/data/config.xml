@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<authors>
+		<name>Rolfe Power</name>
+	</authors>
+	<dataset_definition_paths>
+		<path>kernels.xml</path>
+		<path>kernels-extra.xml</path>
+	</dataset_definition_paths>
+</config>

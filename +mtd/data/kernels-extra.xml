@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasets>
+	<dataset>
+		<name>de430</name>
+		<filename>de440.bsp</filename>
+		<url>https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440.bsp</url>
+		<description>new planetary ephemeris kernel</description>
+		<default>false</default>
+		<type>spice_spk</type>
+	</dataset>
+	<dataset>
+		<name>mar097</name>
+		<filename>mar097.bsp</filename>
+		<url>https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/satellites/mar097.bsp</url>
+		<description>martian satellite ephemerides</description>
+		<type>spice_spk</type>
+		<default>false</default>
+	</dataset>
+</datasets>
