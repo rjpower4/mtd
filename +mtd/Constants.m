@@ -87,6 +87,15 @@ classdef Constants
         %   Units      : [kg]
         %   Source     : <a href="matlab:web('https://physics.nist.gov/cuu/Constants/')">NIST</a>
         ELECTRON_MASS = 9.1093837015e-31
+
+        % Atomic Mass Unit
+        %
+        %   This is defined as one twelfth the mass of a Carbon-12 atom.
+        %
+        %   Dimensions : [M]
+        %   Units      : [kg]
+        %   Source     : <a href="matlab:web('https://arxiv.org/abs/1507.07956')">CODATA</a>
+        ATOMIC_MASS_UNIT = 1.660539040e-27
         
         % Speed of Light in a Vacuum
         %
