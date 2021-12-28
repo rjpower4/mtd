@@ -18,6 +18,25 @@ classdef CelestialBody
             this.naifIdCode = naifId;
             this.radius = radius;
         end
+    end
+
+    methods (Static)
+        function bodies = fromTable(t)
+            %FROMTABLE construct a body for each row in the table
+            row = t(size(t, 1), :);
+            bodies(size(t, 1), 1) = mtd.body.CelestialBody(row.gm, row.naif_id, row.radius);
+            for kRowNum = size(t, 1)-1:-1:1
+                row = t(kRowNum, :);
+                bodies(kRowNum, 1) = mtd.body.CelestialBody(row.gm, row.naif_id, row.radius);
+            end
+        end
+
+        function bodies = fromName(names)
+            %FROMNAME construct a body from the name of the body
+            t = mtd.util.getBodyDataTable(names);
+            [r, ~] = find(t.name == names);
+            t = t(r, :);
+            bodies = mtd.body.CelestialBody.fromTable(t);
         end
     end
 end
