@@ -20,13 +20,13 @@ function [eqPoints, didConverge] = computeCollinearEquilibria(massRatio, ax, opt
 %   converge.
 arguments
     massRatio {mtd.crtbp.mustBeAValidMassRatio}
-    ax (1, 1) double
+    ax double {mustBeVector}
     options.tol double {mtd.util.mustBeValidTolerance} = 1e-12
     options.maxiter {mustBeInteger, mustBeGreaterThan(options.maxiter, 1)} = 15
 end
 
 eqPoints = zeros(3, 6, length(ax));
-didConverge = zeros(length(ax), 3);
+didConverge = false(length(eqPoints), 3);
 
 for k = 1:length(ax)
     % Fast path for CRTBP (a = 0) as these are just the lagrange points
