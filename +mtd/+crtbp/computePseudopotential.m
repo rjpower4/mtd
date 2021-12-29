@@ -1,11 +1,11 @@
-function varargout = computePseudopotential(massRatio, q)
+function [omega, varargout] = computePseudopotential(massRatio, q)
 %COMPUTEPSEUDOPOTENTIAL compute the CRTBP pseudopotential an optionally
 %the partial derivatives
 %
 %
 arguments
     massRatio (1, 1) double {mtd.crtbp.mustBeAValidMassRatio}
-    q double
+    q (:, 6) double
 end
 % Determine number of states passed for return array allocation
 nStates = size(q, 1);
@@ -21,11 +21,11 @@ q3 = q(:, 3); % Z
 dists = mtd.crtbp.computePrimaryDistance(massRatio, q);
 d1 = dists(:, 1); % Distance from P1
 d2 = dists(:, 2); % Distance from P2
-varargout{1} = omm ./ d1 + mu ./ d2 + 0.5 * (q1.^2 + q2.^2);
+omega = omm ./ d1 + mu ./ d2 + 0.5 * (q1.^2 + q2.^2);
 
-% If 2 or more outputs were requested then second output is the
-% gradient of the pseudopotential with respect to the position
-% components. Each row corresponds to each state.
+% If 2 or more outputs were requested then second output is the gradient of the 
+% pseudopotential with respect to the position components. Each row corresponds to each 
+% state.
 if nargout > 1
     d1_3 = dists(:, 1).^3; % Cube of distance from P1
     d2_3 = dists(:, 2).^3; % Cube of distance from P2
@@ -33,12 +33,12 @@ if nargout > 1
     dp(:, 1) = q1 - omm * (q1 + mu) ./ d1_3 - mu * (q1 - 1 + mu) ./ d2_3;
     dp(:, 2) = q2 - omm * q2 ./ d1_3 - mu * q2 ./ d2_3;
     dp(:, 3) = -omm * q3 ./ d1_3 - mu * q3 ./ d2_3;
-    varargout{2} = dp;
+    varargout{1} = dp;
 end
 
-% If 3 outputs were requested, then third output is the hessian of the
-% pseudopotential with respect tot he position components. Each page of
-% the 3-D matrix corresponds to each state.
+% If 3 outputs were requested, then third output is the hessian of the pseudopotential 
+% with respect tot he position components. Each page of the 3-D matrix corresponds to each 
+% state.
 if nargout > 2
     d1_5 = d1_3 .* dists(:, 1).^2; % Quintic of distance from P1
     d2_5 = d2_3 .* dists(:, 2).^2; % Quintic of distance from P2
@@ -60,7 +60,7 @@ if nargout > 2
     ddp(3, 1, :) = ddp(1, 3, :);
     ddp(3, 2, :) = ddp(2, 3, :);
 
-    varargout{3} = ddp;
+    varargout{2} = ddp;
 end
 
 end
