@@ -14,9 +14,9 @@ end
 
 nStates = size(q, 1);
 
-if nargout == 1
+if nargout < 2 % No jacobian requested
     [~, pGradient] = mtd.crtbp.computePseudopotential(massRatio, q);
-elseif nargout > 1
+else           % Jacobian requested, so will need hessian
     [~, pGradient, pHessian] = mtd.crtbp.computePseudopotential(massRatio, q);
 end
 
