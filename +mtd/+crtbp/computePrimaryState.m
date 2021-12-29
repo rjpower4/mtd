@@ -5,7 +5,7 @@ arguments
 end
 
 x1 = -massRatio;
-x2 = 1 - x1;
+x2 = 1 - massRatio;
 xB = 0;
 
 % If one argument out, then return as matrix
