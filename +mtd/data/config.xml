@@ -3,8 +3,11 @@
 	<authors>
 		<name>Rolfe Power</name>
 	</authors>
-	<dataset_definition_paths>
+    <body_files>
+	    <body_file>bodies.xml</body_file>
+    </body_files>
+	<dataset_files>
 		<path>kernels.xml</path>
 		<path>kernels-extra.xml</path>
-	</dataset_definition_paths>
+	</dataset_files>
 </config>

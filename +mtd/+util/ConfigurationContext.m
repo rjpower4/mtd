@@ -11,6 +11,10 @@ classdef ConfigurationContext < handle
         dataDirectoryName = "data" %  Name of the data directory relative to MTD root
     end
 
+    properties (SetAccess = private)
+        bodyFile
+    end
+
     properties (Access = private)
         datasetManager (1, 1)
         dataRoot
@@ -20,7 +24,7 @@ classdef ConfigurationContext < handle
         function this = ConfigurationContext()
             %CONFIGURATIONCONTEXT create a new configuration context
             %
-            %   This function will error if the hardcoded configuration file cannot be 
+            %   This function will error if the hardcoded configuration file cannot be
             %   found!
 
 
@@ -33,6 +37,7 @@ classdef ConfigurationContext < handle
                 error("Cannot find configuration file: %s", fpath);
             end
             rawConfiguration = readstruct(fpath);
+            this.bodyFile = mtd.util.resolvePath(rawConfiguration.body_file, this.dataRoot);
             dfiles = rawConfiguration.dataset_definition_paths.path;
             this.datasetManager = mtd.util.DataSetManager(this.getDataRoot, dfiles);
         end

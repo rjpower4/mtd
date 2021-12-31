@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bodies>
+<body>
+  <name>MERCURY</name>
+  <naif_id>199</naif_id>
+  <gm>22031.78000000002</gm>
+  <radius>2439.7</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>57909136.81230463</semi_major_axis>
+  <eccentricity>0.2056214551075072</eccentricity>
+  <inclination>0.12231184318926291</inclination>
+  <right_ascension>0.8446243491107156</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>VENUS</name>
+  <naif_id>299</naif_id>
+  <gm>324858.592</gm>
+  <radius>6051.8</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>108208915.06628585</semi_major_axis>
+  <eccentricity>0.006795946269228645</eccentricity>
+  <inclination>0.05925400386622436</inclination>
+  <right_ascension>1.3407391072545745</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>EARTH</name>
+  <naif_id>399</naif_id>
+  <gm>398600.4354360959</gm>
+  <radius>6371.008366666666</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>149597892.17545033</semi_major_axis>
+  <eccentricity>0.01673593211345888</eccentricity>
+  <inclination>0.0002980667409484389</inclination>
+  <right_ascension>1.2204084798628088</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>EARTH_BARYCENTER</name>
+  <naif_id>3</naif_id>
+  <gm>403503.2355022598</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>149597894.01764473</semi_major_axis>
+  <eccentricity>0.016729203447508743</eccentricity>
+  <inclination>0.0002964291552887333</inclination>
+  <right_ascension>1.2452128900283863</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>MOON</name>
+  <naif_id>301</naif_id>
+  <gm>4902.800066163796</gm>
+  <radius>1737.4000000000003</radius>
+  <parent_naif_id>399</parent_naif_id>
+  <parent_name>EARTH</parent_name>
+  <semi_major_axis>384747.9920112924</semi_major_axis>
+  <eccentricity>0.055545512189972876</eccentricity>
+  <inclination>0.09000055845557464</inclination>
+  <right_ascension>1.1628065047033027</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>MARS</name>
+  <naif_id>499</naif_id>
+  <gm>42828.37362069909</gm>
+  <radius>3389.5266666666666</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>227940827.23873448</semi_major_axis>
+  <eccentricity>0.0934015263080405</eccentricity>
+  <inclination>0.03228351403595902</inclination>
+  <right_ascension>0.8649537342141631</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>MARS_BARYCENTER</name>
+  <naif_id>4</naif_id>
+  <gm>42828.37521400002</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>227941246.1297469</semi_major_axis>
+  <eccentricity>0.09335566639326764</eccentricity>
+  <inclination>0.032353865255233996</inclination>
+  <right_ascension>0.8675040417756765</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>PHOBOS</name>
+  <naif_id>401</naif_id>
+  <gm>0.0007087546066894452</gm>
+  <radius>11.166666666666666</radius>
+  <parent_naif_id>499</parent_naif_id>
+  <parent_name>MARS</parent_name>
+  <semi_major_axis>9373.719033922593</semi_major_axis>
+  <eccentricity>0.015115808092904442</eccentricity>
+  <inclination>0.46544592429899223</inclination>
+  <right_ascension>1.444075678734669</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>DEIMOS</name>
+  <naif_id>402</naif_id>
+  <gm>0.00009615569648120313</gm>
+  <radius>6.3</radius>
+  <parent_naif_id>499</parent_naif_id>
+  <parent_name>MARS</parent_name>
+  <semi_major_axis>23457.074720873316</semi_major_axis>
+  <eccentricity>0.0002498217376225122</eccentricity>
+  <inclination>0.4313348977142978</inclination>
+  <right_ascension>1.392752298142952</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>JUPITER</name>
+  <naif_id>599</naif_id>
+  <gm>126686534.92180079</gm>
+  <radius>69946</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>778190453.3533099</semi_major_axis>
+  <eccentricity>0.04840426258325831</eccentricity>
+  <inclination>0.022762281587026003</inclination>
+  <right_ascension>1.387941727636721</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>JUPITER_BARYCENTER</name>
+  <naif_id>5</naif_id>
+  <gm>126712764.8000002</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>778353399.6432633</semi_major_axis>
+  <eccentricity>0.04845619064831883</eccentricity>
+  <inclination>0.022774704091763742</inclination>
+  <right_ascension>1.389650126925117</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>IO</name>
+  <naif_id>501</naif_id>
+  <gm>5959.9160334104035</gm>
+  <radius>1821.5</radius>
+  <parent_naif_id>599</parent_naif_id>
+  <parent_name>JUPITER</parent_name>
+  <semi_major_axis>421677.8246741515</semi_major_axis>
+  <eccentricity>0.004177096013617754</eccentricity>
+  <inclination>0.03868941546990952</inclination>
+  <right_ascension>-0.38693028697357806</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>EUROPA</name>
+  <naif_id>502</naif_id>
+  <gm>3202.738774922892</gm>
+  <radius>1560.8</radius>
+  <parent_naif_id>599</parent_naif_id>
+  <parent_name>JUPITER</parent_name>
+  <semi_major_axis>670993.4220609146</semi_major_axis>
+  <eccentricity>0.009363810255578756</eccentricity>
+  <inclination>0.03853938414930938</inclination>
+  <right_ascension>-0.3911769061144114</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>GANYMEDE</name>
+  <naif_id>503</naif_id>
+  <gm>9887.834453334144</gm>
+  <radius>2631.2</radius>
+  <parent_naif_id>599</parent_naif_id>
+  <parent_name>JUPITER</parent_name>
+  <semi_major_axis>1070366.247829367</semi_major_axis>
+  <eccentricity>0.0016280428481488713</eccentricity>
+  <inclination>0.03753085365345232</inclination>
+  <right_ascension>-0.3968072785538838</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>CALLISTO</name>
+  <naif_id>504</naif_id>
+  <gm>7179.28936139727</gm>
+  <radius>2410.3</radius>
+  <parent_naif_id>599</parent_naif_id>
+  <parent_name>JUPITER</parent_name>
+  <semi_major_axis>1882614.550414592</semi_major_axis>
+  <eccentricity>0.007358264167534</eccentricity>
+  <inclination>0.441712206821018</inclination>
+  <right_ascension>-0.031745459728219</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>SATURN</name>
+  <naif_id>699</naif_id>
+  <gm>37931207.49865224</gm>
+  <radius>58300</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>1425745792.1058724</semi_major_axis>
+  <eccentricity>0.05424600023179607</eccentricity>
+  <inclination>0.043401174244503696</inclination>
+  <right_ascension>1.1578461803023719</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>SATURN_BARYCENTER</name>
+  <naif_id>6</naif_id>
+  <gm>37940585.2</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>1426165299.502501</semi_major_axis>
+  <eccentricity>0.05481593792531462</eccentricity>
+  <inclination>0.04339275473903531</inclination>
+  <right_ascension>1.1554021534227408</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>MIMAS</name>
+  <naif_id>601</naif_id>
+  <gm>2.5035228846617947</gm>
+  <radius>198.36666666666667</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>185376.11126558235</semi_major_axis>
+  <eccentricity>0.01967731820021204</eccentricity>
+  <inclination>0.49028066317087915</inclination>
+  <right_ascension>3.3241471576396115</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>ENCELADUS</name>
+  <naif_id>602</naif_id>
+  <gm>7.211292085479989</gm>
+  <radius>252.1</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>237911.0901010525</semi_major_axis>
+  <eccentricity>0.00486798424231997</eccentricity>
+  <inclination>0.48958010164828436</inclination>
+  <right_ascension>3.3244350692030507</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>TETHYS</name>
+  <naif_id>603</naif_id>
+  <gm>41.211172077013025</gm>
+  <radius>530.9999999999999</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>294572.617400643</semi_major_axis>
+  <eccentricity>0.0010301764292565867</eccentricity>
+  <inclination>0.48976379566837597</inclination>
+  <right_ascension>3.3243112248177886</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>DIONE</name>
+  <naif_id>604</naif_id>
+  <gm>73.11635322923193</gm>
+  <radius>561.4333333333333</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>377336.8586563659</semi_major_axis>
+  <eccentricity>0.0022515180649162582</eccentricity>
+  <inclination>0.48954029395634335</inclination>
+  <right_ascension>3.3245799016034456</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>RHEA</name>
+  <naif_id>605</naif_id>
+  <gm>153.94220455453421</gm>
+  <radius>763.5</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>527012.6272430451</semi_major_axis>
+  <eccentricity>0.0009970720158878341</eccentricity>
+  <inclination>0.4888736542340852</inclination>
+  <right_ascension>3.3242190731560504</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>TITAN</name>
+  <naif_id>606</naif_id>
+  <gm>8978.138845307376</gm>
+  <radius>2574.7999999999997</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>1221837.604271607</semi_major_axis>
+  <eccentricity>0.028787531561678487</eccentricity>
+  <inclination>0.4831988152333575</inclination>
+  <right_ascension>3.329593859800267</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>HYPERION</name>
+  <naif_id>607</naif_id>
+  <gm>0.3718791714191668</gm>
+  <radius>138.6</radius>
+  <parent_naif_id>699</parent_naif_id>
+  <parent_name>SATURN</parent_name>
+  <semi_major_axis>1480779.3752898567</semi_major_axis>
+  <eccentricity>0.10510038695532735</eccentricity>
+  <inclination>0.4834748236142621</inclination>
+  <right_ascension>3.3273515654729193</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>URANUS</name>
+  <naif_id>799</naif_id>
+  <gm>5793951.322279009</gm>
+  <radius>25363.666666666668</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>2844363836.9550285</semi_major_axis>
+  <eccentricity>0.04715285528214839</eccentricity>
+  <inclination>0.013486536720077012</inclination>
+  <right_ascension>1.2916395673910495</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>URANUS_BARYCENTER</name>
+  <naif_id>7</naif_id>
+  <gm>5794548.600000008</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>2862328633.054656</semi_major_axis>
+  <eccentricity>0.04723313220830658</eccentricity>
+  <inclination>0.013510222283740757</inclination>
+  <right_ascension>1.2908700593395572</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>ARIEL</name>
+  <naif_id>701</naif_id>
+  <gm>83.46344431770477</gm>
+  <radius>578.9</radius>
+  <parent_naif_id>799</parent_naif_id>
+  <parent_name>URANUS</parent_name>
+  <semi_major_axis>190923.86784263642</semi_major_axis>
+  <eccentricity>0.0005527169941382912</eccentricity>
+  <inclination>1.705190172310101</inclination>
+  <right_ascension>3.3569059517937765</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>UMBRIEL</name>
+  <naif_id>702</naif_id>
+  <gm>85.09338094489388</gm>
+  <radius>584.7</radius>
+  <parent_naif_id>799</parent_naif_id>
+  <parent_name>URANUS</parent_name>
+  <semi_major_axis>265975.64042472845</semi_major_axis>
+  <eccentricity>0.003973408155103285</eccentricity>
+  <inclination>1.7063640444377506</inclination>
+  <right_ascension>3.3570681100770265</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>TITANIA</name>
+  <naif_id>703</naif_id>
+  <gm>226.9437003741248</gm>
+  <radius>788.9</radius>
+  <parent_naif_id>799</parent_naif_id>
+  <parent_name>URANUS</parent_name>
+  <semi_major_axis>436275.9542381181</semi_major_axis>
+  <eccentricity>0.0015559017602633</eccentricity>
+  <inclination>1.7074479269701595</inclination>
+  <right_ascension>3.3565071881427806</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>OBERON</name>
+  <naif_id>704</naif_id>
+  <gm>205.3234302535623</gm>
+  <radius>761.4</radius>
+  <parent_naif_id>799</parent_naif_id>
+  <parent_name>URANUS</parent_name>
+  <semi_major_axis>583425.8829526172</semi_major_axis>
+  <eccentricity>0.0017002183423456007</eccentricity>
+  <inclination>1.7078718889023232</inclination>
+  <right_ascension>3.3564103815332964</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>NEPTUNE</name>
+  <naif_id>899</naif_id>
+  <gm>6835099.502439672</gm>
+  <radius>24623</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>4490622771.559316</semi_major_axis>
+  <eccentricity>0.009160771956395196</eccentricity>
+  <inclination>0.030893784456920145</inclination>
+  <right_ascension>0.8414917884358732</right_ascension>
+  <type>planet</type>
+</body>
+<body>
+  <name>NEPTUNE_BARYCENTER</name>
+  <naif_id>8</naif_id>
+  <gm>6836527.100580023</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>4455603704.210169</semi_major_axis>
+  <eccentricity>0.009068712273030919</eccentricity>
+  <inclination>0.03089011562272766</inclination>
+  <right_ascension>0.8414339605216071</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>TRITON</name>
+  <naif_id>801</naif_id>
+  <gm>1427.598140725034</gm>
+  <radius>1352.6</radius>
+  <parent_naif_id>899</parent_naif_id>
+  <parent_name>NEPTUNE</parent_name>
+  <semi_major_axis>354757.09055329</semi_major_axis>
+  <eccentricity>0.000020551330959193797</eccentricity>
+  <inclination>2.304446758504378</inclination>
+  <right_ascension>2.5104429222176563</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>PLUTO</name>
+  <naif_id>999</naif_id>
+  <gm>869.6138177608749</gm>
+  <radius>1195</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>5916840863.721479</semi_major_axis>
+  <eccentricity>0.24928619201231464</eccentricity>
+  <inclination>0.2991703822252296</inclination>
+  <right_ascension>1.216354344730906</right_ascension>
+  <type>dwarf_planet</type>
+</body>
+<body>
+  <name>PLUTO_BARYCENTER</name>
+  <naif_id>9</naif_id>
+  <gm>977.0000000000007</gm>
+  <radius>0</radius>
+  <parent_naif_id>10</parent_naif_id>
+  <parent_name>SUN</parent_name>
+  <semi_major_axis>5847266679.069645</semi_major_axis>
+  <eccentricity>0.2489855251567045</eccentricity>
+  <inclination>0.2991602022026605</inclination>
+  <right_ascension>1.2162968378007695</right_ascension>
+  <type>barycenter</type>
+</body>
+<body>
+  <name>CHARON</name>
+  <naif_id>901</naif_id>
+  <gm>105.8799888601881</gm>
+  <radius>605</radius>
+  <parent_naif_id>999</parent_naif_id>
+  <parent_name>PLUTO</parent_name>
+  <semi_major_axis>19596.21121622704</semi_major_axis>
+  <eccentricity>0.00016455366273761105</eccentricity>
+  <inclination>1.970426824677643</inclination>
+  <right_ascension>2.314282694819819</right_ascension>
+  <type>moon</type>
+</body>
+<body>
+  <name>SUN</name>
+  <naif_id>10</naif_id>
+  <gm>132712440041.9393</gm>
+  <radius>696000</radius>
+  <parent_naif_id>0</parent_naif_id>
+  <parent_name>N/A</parent_name>
+  <semi_major_axis>0</semi_major_axis>
+  <eccentricity>0</eccentricity>
+  <inclination>0</inclination>
+  <right_ascension>0</right_ascension>
+  <type>star</type>
+</body>
+<body>
+  <name>SOLAR_SYSTEM_BARYCENTER</name>
+  <naif_id>0</naif_id>
+  <gm>0</gm>
+  <radius>0</radius>
+  <parent_naif_id>0</parent_naif_id>
+  <parent_name>N/A</parent_name>
+  <semi_major_axis>0</semi_major_axis>
+  <eccentricity>0</eccentricity>
+  <inclination>0</inclination>
+  <right_ascension>0</right_ascension>
+  <type>barycenter</type>
+</body>
+</bodies>
