@@ -31,7 +31,7 @@ didConverge = false(length(eqPoints), 3);
 for k = 1:length(ax)
     % Fast path for CRTBP (a = 0) as these are just the lagrange points
     if ax(k) == 0
-        lagrangePoints = crtbpLagrangePoints(massRatio);
+        lagrangePoints = mtd.crtbp.computeLagrangePoints(massRatio);
         eqPoints(:, :, k) = lagrangePoints(1:3, :);
         didConverge(k, :) = [true, true, true];
     else
@@ -43,7 +43,7 @@ end
 
 function [q, didConverge] = internalSolver(mu, ax, options)
 % Determine gamma values
-[guess1, guess2, guess3] = generateInitialGuesses(mu);
+[guess1, guess2, guess3] = generateInitialGuesses(mu, ax);
 [g1, dc1] = simpleNewtonRaphson(@(x) fdf1(mu, ax, x), guess1, options);
 [g2, dc2] = simpleNewtonRaphson(@(x) fdf2(mu, ax, x), guess2, options);
 [g3, dc3] = simpleNewtonRaphson(@(x) fdf3(mu, ax, x), guess3, options);
@@ -73,31 +73,56 @@ x2 = 1 - mu + g2;
 x3 = -mu - g3;
 end
 
-function [g1, g2, g3] = generateInitialGuesses(mu)
+function [g1, g2, g3] = generateInitialGuesses(mu, ax)
 %GENERATEINITIALGUESSES generate initial guesses for the collinear equilibrium points
 %
 %   For this initial guess, I am just using the location of the Lagrange points, i.e., the
 %   location of the equilibrium solutions with no low-thrust acceleration present.
-lagrangePoints = mtd.crtbp.computeLagrangePoints(mu);
-[g1, g2, g3] = x2g(mu, lagrangePoints(1,1), lagrangePoints(2,1), lagrangePoints(3,1));
+p1 = [1, mu - ax - 3, 2*ax - 2*mu + 3, - ax - mu, 2*mu, -mu];
+p2 = [1, ax - mu + 3, 2*ax - 2*mu + 3, ax - mu, -2*mu, -mu];
+p3 = [1, mu - ax + 2, 2*mu - 2*ax + 1, mu - ax - 1, 2*mu - 2, mu - 1];
+
+r1 = roots(p1);
+r2 = roots(p2);
+r3 = roots(p3);
+
+mask1 = imag(r1) == 0 & real(r1) > 0;
+mask2 = imag(r2) == 0 & real(r2) > 0;
+mask3 = imag(r3) == 0 & real(r3) > 0;
+
+g1 = min(r1(mask1));
+g2 = min(r2(mask2));
+g3 = min(r3(mask3));
 end
 
-function [f, df] = fdf1(mu, a, g)
+function [f, df] = fdf1(mu, ax, g)
 %FDF1 helper function to evaluate function and derivative for x1 equilibrium solution
-f = 1 - mu - g - (1 - mu) / (1 - g)^2 + mu / g^2 + a;
-df = -1 - 2 * (1 - mu) / (1 - g)^3 - 2 * mu / g^3;
+% f = 1 - mu - g - (1 - mu) / (1 - g)^2 + mu / g^2 + a;
+% df = -1 - 2 * (1 - mu) / (1 - g)^3 - 2 * mu / g^3;
+p1 = [1, mu - ax - 3, 2*ax - 2*mu + 3, - ax - mu, 2*mu, -mu];
+dp1 = polyder(p1);
+f = polyval(p1, g);
+df = polyval(dp1, g);
 end
 
-function [f, df] = fdf2(mu, a, g)
+function [f, df] = fdf2(mu, ax, g)
 %FDF2 helper function to evaluate function and derivative for x1 equilibrium solution
-f = (1 - mu) / (1 + g)^2 + mu / g^2 - 1 + mu - g - a;
-df = -2 * (1 - mu) / (1 + g)^3 - 2 * mu / g^3 - 1;
+% f = (1 - mu) / (1 + g)^2 + mu / g^2 - 1 + mu - g - a;
+% df = -2 * (1 - mu) / (1 + g)^3 - 2 * mu / g^3 - 1;
+p2 = [1, ax - mu + 3, 2*ax - 2*mu + 3, ax - mu, -2*mu, -mu];
+dp2 = polyder(p2);
+f = polyval(p2, g);
+df = polyval(dp2, g);
 end
 
-function [f, df] = fdf3(mu, a, g)
+function [f, df] = fdf3(mu, ax, g)
 %FDF3 helper function to evaluate function and derivative for x1 equilibrium solution
-f = -mu - g + (1 - mu) / g^2 + mu / (g + 1)^2 + a;
-df = -1 - 2*(1 - mu) / g^3 - 2 * mu / (g + 1)^3;
+% f = -mu - g + (1 - mu) / g^2 + mu / (g + 1)^2 + a;
+% df = -1 - 2*(1 - mu) / g^3 - 2 * mu / (g + 1)^3;
+p3 = [1, mu - ax + 2, 2*mu - 2*ax + 1, mu - ax - 1, 2*mu - 2, mu - 1];
+dp3 = polyder(p3);
+f = polyval(p3, g);
+df = polyval(dp3, g);
 end
 
 function [x, didConverge, nIter] = simpleNewtonRaphson(f, x0, options)
@@ -106,7 +131,7 @@ x = x0;
 [g, dg] = f(x);
 nIter = 0;
 while abs(g) > options.tol && nIter < options.maxiter
-    x = x - g / dg;
+    x = x - dg \ g;
     [g, dg] = f(x);
     nIter = nIter + 1;
 end
